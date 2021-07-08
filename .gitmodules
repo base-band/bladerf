@@ -1,6 +1,3 @@
-[submodule "lib/software"]
-	path = lib/software
-	url = git@github.com:base-band/software.git
 [submodule "lib/hardware"]
 	path = lib/hardware
 	url = git@github.com:base-band/hardware.git
