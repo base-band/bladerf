@@ -1,0 +1,19 @@
+name: Try Verilate Project, alpha
+on:
+  workflow_dispatch:
+  push:
+    branches: [ trunk ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+
+jobs:
+  verilate-jobs:
+    name: Verilate alpha
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/esromneb/docker-images/lattice-ci-build:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Verilate
+        run: cd lib/hardware/sim/alpha && make verilate
+
