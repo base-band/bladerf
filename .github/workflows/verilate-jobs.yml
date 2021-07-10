@@ -11,7 +11,7 @@ jobs:
     name: Verilate alpha
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/esromneb/docker-images/lattice-ci-build:latest
+      image: ghcr.io/base-band/docker-images/verilator-4-016:latest
     steps:
       - uses: actions/checkout@v2
         with:
