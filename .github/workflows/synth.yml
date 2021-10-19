@@ -19,3 +19,4 @@ jobs:
       - run: docker exec qrt apt update
       - run: docker exec qrt apt install -y iproute2
       - run: docker exec qrt ip a
+      - run: docker exec qrt whoami
