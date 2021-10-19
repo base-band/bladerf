@@ -7,10 +7,8 @@ on:
 jobs:
   test_stuff:
     runs-on: ubuntu-latest  
-    - run: |
-        ls
-        whoami
-        pwd
-        free -h
-        df -h
-      name: Run in container
+    run: |
+      ls
+      whoami
+      free -h
+      df -h
