@@ -15,5 +15,6 @@ jobs:
       - run: |
           pwd
           ls
-          make
+          ls /root/
+          ls /root/intelFPGA_lite
         name: Run in container
