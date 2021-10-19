@@ -5,10 +5,12 @@ on:
     branches: [ ben/ci1 ]
 
 jobs:
-  test_stuff:
-    runs-on: ubuntu-latest  
-    run: |
-      ls
-      whoami
-      free -h
-      df -h
+  test-stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: ls
+      - run: pwd
+      - run: whoami
+      - run: free -h
+      - run: df -h
