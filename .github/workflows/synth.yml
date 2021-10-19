@@ -7,7 +7,9 @@ on:
 jobs:
   container:
     runs-on: ubuntu-latest
-    container: ghcr.io/base-band/docker-images/quartus-ci-build:latest
+    container:
+      image: ghcr.io/base-band/docker-images/quartus-ci-build:latest
+      options: --net=host
     steps:
       - uses: actions/checkout@v2
         with:
