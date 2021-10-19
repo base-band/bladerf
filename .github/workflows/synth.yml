@@ -5,15 +5,12 @@ on:
     branches: [ trunk ]
 
 jobs:
-  container:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/base-band/docker-images/quartus-ci-build:latest
-      options: --net=host
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          submodules: recursive
-      - run: |
-          QPATH=/root/intelFPGA_lite/20.1/quartus make
-        name: Run in container
+  test_stuff:
+    runs-on: ubuntu-latest  
+    - run: |
+        ls
+        whoami
+        pwd
+        free -h
+        df -h
+      name: Run in container
