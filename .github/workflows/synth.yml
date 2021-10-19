@@ -18,3 +18,4 @@ jobs:
       - run: docker run -dit --name qrt -v $(pwd):/src ubuntu:18.04
       - run: docker exec qrt apt update
       - run: docker exec qrt apt install iproute2
+      - run: docker exec qrt ip a
