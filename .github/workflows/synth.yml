@@ -5,15 +5,13 @@ on:
     branches: [ trunk ]
 
 jobs:
-  container:
+  run-synth:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/base-band/docker-images/quartus-ci-build:latest
-      options: --net=host
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: recursive
-      - run: |
-          QPATH=/root/intelFPGA_lite/20.1/quartus make
-        name: Run in container
+      - run: free -h
+      - run: df -h
+      - run: docker run -dit --name qrt --net=host -v $(pwd):/src ghcr.io/base-band/docker-images/quartus-ci-build:latest
+      - run: docker exec qrt bash -c 'make -C /src'
+      - run: free -h
+      - run: df -h
