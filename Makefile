@@ -1,5 +1,8 @@
-QPATH=~/intelFPGA_lite/20.1/quartus/
+QPATH?=~/intelFPGA_lite/20.1/quartus/
 PROJECT=bladerf
+
+.PHONY: default clean quartus
+
 default: quartus
 clean:
 	rm -rf db incremental_db output_files *dump.txt

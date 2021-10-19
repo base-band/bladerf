@@ -13,8 +13,5 @@ jobs:
         with:
           submodules: recursive
       - run: |
-          pwd
-          ls
-          ls /root/
-          ls /root/intelFPGA_lite
+          QPATH=/root/intelFPGA_lite/20.1/quartus make
         name: Run in container
