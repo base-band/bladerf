@@ -1,0 +1,19 @@
+name: Run Synthesis
+on:
+  workflow_dispatch:
+  push:
+    branches: [ trunk ]
+
+jobs:
+  container:
+    runs-on: ubuntu-latest
+    container: ghcr.io/base-band/docker-images/quartus-ci-build:latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+      - run: |
+          pwd
+          ls
+          make
+        name: Run in container
