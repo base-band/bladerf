@@ -2,7 +2,7 @@ name: Run Synthesis
 on:
   workflow_dispatch:
   push:
-    branches: [ trunk ]
+    branches: [ ben/ci1 ]
 
 jobs:
   test_stuff:
