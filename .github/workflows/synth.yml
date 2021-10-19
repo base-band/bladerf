@@ -14,3 +14,7 @@ jobs:
       - run: whoami
       - run: free -h
       - run: df -h
+      - run: which docker
+      - run: docker run -dit --name qrt -v $(pwd):/src ubuntu:18.04
+      - run: docker exec qrt pwd
+      - run: docker exec qrt hostname
