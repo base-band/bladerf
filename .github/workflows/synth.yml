@@ -15,7 +15,7 @@ jobs:
       - run: free -h
       - run: df -h
       - run: which docker
-      - run: docker run -dit --name qrt -v $(pwd):/src ubuntu:18.04
+      - run: docker run -dit --name qrt --net=host -v $(pwd):/src ubuntu:18.04
       - run: docker exec qrt apt update
       - run: docker exec qrt apt install -y iproute2
       - run: docker exec qrt ip a
