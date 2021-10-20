@@ -4,6 +4,12 @@ on:
   push:
     branches: [ trunk ]
 
+# This flow does not use the "container" option. This is required due to
+# a segfault produced by quartus if there is a virtual NIC. The solution
+# is to pass --net=host however this doesn't work with github's builtin
+# "container". We are forced to run docker explicitly, and use
+# "docker exec" to run things inside
+
 jobs:
   run-synth:
     runs-on: ubuntu-latest
