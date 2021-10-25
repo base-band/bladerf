@@ -27,36 +27,53 @@ always @(posedge cv_clk2) begin
 end
 //////////////////////////////////
 
-
-
 parameter VERILATE = 1'b1;
 
 
-blade_top #(.VERILATE (VERILATE)
+`define BLADE_SCALAR_0       "mem/loopback/scalar0.mif"
+`define BLADE_SCALAR_1       "mem/loopback/scalar1.mif"
+`define BLADE_SCALAR_2       "mem/loopback/scalar2.mif"
+`define BLADE_SCALAR_3       "mem/loopback/scalar3.mif"
+`define BLADE_VMEM0          "mem/loopback/vmem0.mif"
+`define BLADE_VMEM1          "mem/loopback/vmem1.mif"
+`define BLADE_VMEM2          "mem/loopback/vmem2.mif"
+`define BLADE_VMEM3          "mem/loopback/vmem3.mif"
+`define BLADE_VMEM4          "mem/loopback/vmem4.mif"
+`define BLADE_VMEM5          "mem/loopback/vmem5.mif"
+`define BLADE_VMEM6          "mem/loopback/vmem6.mif"
+`define BLADE_VMEM7          "mem/loopback/vmem7.mif"
+`define BLADE_VMEM8          "mem/loopback/vmem8.mif"
+`define BLADE_VMEM9          "mem/loopback/vmem9.mif"
+`define BLADE_VMEM10         "mem/loopback/vmem10.mif"
+`define BLADE_VMEM11         "mem/loopback/vmem11.mif"
+`define BLADE_VMEM12         "mem/loopback/vmem12.mif"
+`define BLADE_VMEM13         "mem/loopback/vmem13.mif"
+`define BLADE_VMEM14         "mem/loopback/vmem14.mif"
+`define BLADE_VMEM15         "mem/loopback/vmem15.mif"
 
 
-        // these need to be uncommented and the paths worked out
-
-        // .SCALAR_MEM_0 (`CS22_SCALAR_0),
-        // .SCALAR_MEM_1 (`CS22_SCALAR_1),
-        // .SCALAR_MEM_2 (`CS22_SCALAR_2),
-        // .SCALAR_MEM_3 (`CS22_SCALAR_3),
-        // .VMEM0 (`CS22_VMEM0),
-        // .VMEM1 (`CS22_VMEM1),
-        // .VMEM2 (`CS22_VMEM2),
-        // .VMEM3 (`CS22_VMEM3),
-        // .VMEM4 (`CS22_VMEM4),
-        // .VMEM5 (`CS22_VMEM5),
-        // .VMEM6 (`CS22_VMEM6),
-        // .VMEM7 (`CS22_VMEM7),
-        // .VMEM8 (`CS22_VMEM8),
-        // .VMEM9 (`CS22_VMEM9),
-        // .VMEM10 (`CS22_VMEM10),
-        // .VMEM11 (`CS22_VMEM11),
-        // .VMEM12 (`CS22_VMEM12),
-        // .VMEM13 (`CS22_VMEM13),
-        // .VMEM14 (`CS22_VMEM14),
-        // .VMEM15 (`CS22_VMEM15)
+blade_top #(
+        .VERILATE (VERILATE),
+        .SCALAR_MEM_0 (`BLADE_SCALAR_0),
+        .SCALAR_MEM_1 (`BLADE_SCALAR_1),
+        .SCALAR_MEM_2 (`BLADE_SCALAR_2),
+        .SCALAR_MEM_3 (`BLADE_SCALAR_3),
+        .VMEM0 (`BLADE_VMEM0),
+        .VMEM1 (`BLADE_VMEM1),
+        .VMEM2 (`BLADE_VMEM2),
+        .VMEM3 (`BLADE_VMEM3),
+        .VMEM4 (`BLADE_VMEM4),
+        .VMEM5 (`BLADE_VMEM5),
+        .VMEM6 (`BLADE_VMEM6),
+        .VMEM7 (`BLADE_VMEM7),
+        .VMEM8 (`BLADE_VMEM8),
+        .VMEM9 (`BLADE_VMEM9),
+        .VMEM10 (`BLADE_VMEM10),
+        .VMEM11 (`BLADE_VMEM11),
+        .VMEM12 (`BLADE_VMEM12),
+        .VMEM13 (`BLADE_VMEM13),
+        .VMEM14 (`BLADE_VMEM14),
+        .VMEM15 (`BLADE_VMEM15)
         )
     blade_top (
         .CLK                                (clk),
